@@ -1,0 +1,52 @@
+<% include ./partials/header.ejs %>
+    <link rel="stylesheet" href="../stylesheets/profile.css">
+
+    <form style="display: none;" id="prflfrm" action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" id="prflinp">  
+    </form>
+    <div id="container">
+        <div id="dets">
+            <div id="image">
+                <img src=<%= foundUser.profileImage %> alt=" ">
+            </div>
+            <div id="txt">
+                <h2><%= foundUser.name %></h2>
+                <button id="btn" >change image</button>
+            </div>
+        </div>
+        
+        <div id="form">
+            <h2>Make new car selling listing.</h2>
+            <form action="/addcar" method="POST" enctype="multipart/form-data">
+                <input type="text" placeholder="car's price" name="carsprice">
+                <input type="text" placeholder="car's name" name="carsname">
+                <input type="text" placeholder="contact" name="contact">
+                <input type="file" name="fileimg">
+                <input type="submit">
+            </form>
+            
+        </div>
+        <div id="posts">
+            <h3>Your Previous Entries</h3>
+            <% foundUser.cars.reverse().forEach(function(car){ %>
+                <div class="post">
+                    <img src=<%= car.carimg %> alt="some image">
+                    <h3>Car's name:<%= car.carname %></h3>
+                    <h3>Car's Price:<%= car.carprice %></h3>
+                    <a href=<%= 'tel:'+car.contact %>>call me !!</a>
+                </div>
+        <% }) %>
+        </div>
+
+    </div>
+    <script>
+        document.querySelector("#btn").addEventListener('click',function(){
+            document.querySelector('#prflinp').click();
+        })
+        document.querySelector('#prflinp').addEventListener('change',function(){
+            // alert("hua chnge")
+            document.querySelector('#prflfrm').submit();
+        })
+
+    </script>
+<% include ./partials/footer.ejs %>

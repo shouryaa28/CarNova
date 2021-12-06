@@ -1,0 +1,23 @@
+<% include ./partials/header.ejs %>
+    <link rel="stylesheet" href="../stylesheets/sellingapp.css">
+
+    <div id="container">
+        <h1>All Selling Cars</h1>
+        <div id="posts">
+            <% cars.reverse().forEach(function(car){ %>
+                <div class="post">
+                    <img src=<%=car.carimg %> alt="some image">
+                    <h3>Car's name: <%= car.carname %></h3>
+                    <h3>Car's Price: <%= car.carprice %></h3>
+                    <a href=<%= "tel:"+car.contact %>>call me </a>
+                </div>
+            <% }) %>
+        </div>
+        
+        <% for(var i = 0; i<pages; i++){ %>
+            <a href=<%= '/sell/'+i %>>
+            <%= i+1 %>
+        </a>
+        <% } %>
+    </div>
+<% include ./partials/footer.ejs %>

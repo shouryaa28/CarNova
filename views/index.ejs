@@ -1,0 +1,32 @@
+<% include ./partials/header.ejs %>
+
+<link rel="stylesheet" href="../stylesheets/style.css">
+
+        <div id="container">
+            
+            <h4>Sell/Buy your car <span>at really great price !!</span></h4>
+            <div id="form">
+                <h2>Login Here</h2>
+                <form action="/login" method="POST">
+                    <input type="text" placeholder="username" name="username">
+                    <input type="password" placeholder="password" name="password">
+                    <input type="submit">
+                </form>
+            </div>
+            <hr>
+            
+            <div id="form">
+                <h2>Register Here</h2>
+                <form action="/reg" method="POST">
+                    <input type="text" placeholder="name" name="name">
+                    <input type="text" placeholder="email" name="email">
+                    <input type="text" placeholder="username" name="username">
+                    <input type="password" placeholder="password" name="password">
+                    <input type="submit">
+                </form>
+            </div>
+        </div>
+        
+    </div>
+    
+<% include ./partials/footer.ejs %>
