@@ -22,7 +22,7 @@ html,body{
 }
 
 nav{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     padding: 40px 0;
 }
@@ -35,6 +35,8 @@ nav a{
     font-weight: 500;
     color: black;
     margin-right: 20px;
+    margin-left: 5%;
+    font-size: x-large;
     text-decoration: none;
 }
 

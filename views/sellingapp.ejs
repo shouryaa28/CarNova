@@ -4,7 +4,7 @@
     <div id="container">
         <h1>All Selling Cars</h1>
         <div id="posts">
-            <% cars.reverse().forEach(function(car){ %>
+            <% cars.forEach(function(car){ %>
                 <div class="post">
                     <img src=<%=car.carimg %> alt="some image">
                     <h3>Car's name: <%= car.carname %></h3>
@@ -13,10 +13,11 @@
                 </div>
             <% }) %>
         </div>
+        <br><br>
         
         <% for(var i = 0; i<pages; i++){ %>
             <a href=<%= '/sell/'+i %>>
-            <%= i+1 %>
+                <button><%= i+1 %></button>
         </a>
         <% } %>
     </div>
