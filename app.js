@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const mongoose=require('mongoose')
+
 
 const passport=require('passport')
 const expressSession=require('express-session')
@@ -51,5 +53,14 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+mongoose.connect('mongodb+srv://shouryaa:uaePuSnuLY5b9Pbw@cluster0.r7u6e.mongodb.net/test')
+.then(() => {
+  app.listen(8080, () => {
+    console.log('Listening on port 8080')
+  })
+}).catch((err)=> {
+  console.log(err)
+})
 
 module.exports = app;

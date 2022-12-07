@@ -1,6 +1,6 @@
 const mongoose=require('mongoose')
 
-mongoose.connect('mongodb://localhost/carsell')
+
 const carSchema = mongoose.Schema({
     carname: String,
     carprice: String,

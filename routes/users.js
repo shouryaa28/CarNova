@@ -1,8 +1,6 @@
 const mongoose=require('mongoose')
 const plm=require('passport-local-mongoose')
 
-mongoose.connect('mongodb://localhost/carsell')
-
 const userSchema=mongoose.Schema({
   name:String,
   email:String,
